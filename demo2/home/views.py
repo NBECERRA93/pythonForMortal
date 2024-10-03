@@ -14,7 +14,7 @@ def about(request):
 
 # 4. Lista de productos
 def products(request):
-    return render(request, 'home/products.html'),
+    return render(request, 'home/products.html')
 
 # 5. Detalles del producto
 def product_detail(request, product_id):

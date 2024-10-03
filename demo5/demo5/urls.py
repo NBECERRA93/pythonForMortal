@@ -17,6 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name="index_view"), #1. Index
+    path('contact/', views.contact, name='contact'),  # 2. Página de contacto
+    path('about/', views.about, name='about'),  # 3. Sobre nosotros
+    path('products/', views.products, name='products'),  # 4. Lista de productos
+    path('products/<int:product_id>/', views.product_detail, name='product_detail'),  # 5. Detalles del producto
+    path('blog/', views.blog, name='blog'),  # 6. Blog
+    path('blog/<int:post_id>/', views.blog_detail, name='blog_detail'),  # 7. Detalle del blog
+    path('register/', views.register, name='register'),  # 8. Registro de usuario
+    path('login/', views.login, name='login'),  # 9. Iniciar sesión
+    path('profile/', views.profile, name='profile'),  # 10. Perfil de usuario
 ]
